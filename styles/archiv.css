@@ -14,7 +14,8 @@
 .archiv input {
   display: block;
   margin: 24px auto 32px auto;
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
   padding: 10px 14px;
 
   border: 1.5px solid #bbb;
