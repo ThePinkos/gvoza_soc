@@ -45,30 +45,73 @@
     <h2 id="oblasti">Oblasti, v ktorých môžeš sútažiť:</h2>
 
     <div class="oblasti">
-      <div>Matematika, fyzika</div>
-      <div>Chémia, potravinárstvo</div>
-      <div>Biológia</div>
-      <div>Životné prostredie, geografia, geológia</div>
-      <div>Informatika</div>
-      <div>Elektrotechnika a hardware</div>
-      <div>História, filozofia, právne vedy</div>
-      <div>Teória kultúry, umenie, umelecká, odevná tvorba</div>
-      <div>Ekonomika a riadenie</div>
-      <div>Pedagogika, psychológia, sociológia</div>
-      <div>Tvorba učebných pomôcok, didaktické technológie</div>
-      <div>Problematika voľného času</div>
-      <div>Zdravotníctvo a farmakológia</div>
       <div>
-        Pôdohospodárstvo (poľnohospodárstvo, lesné a vodné hospodárstvo)
+        Matematika, fyzika
+        <img src="/obrazky/mat.png" />
       </div>
-      <div>Cestovný ruch, hotediverstvo, gastronómia</div>
-      <div>Strojárstvo, hutníctvo, doprava</div>
-      <div>Stavebníctvo, geodézia, kartografia</div>
+      <div>
+        Chémia, potravinárstvo
+        <img src="/obrazky/mat.png" />
+      </div>
+      <div>Biológia <img src="/obrazky/mat.png" /></div>
+      <div>
+        Životné prostredie, geografia, geológia<img src="/obrazky/mat.png" />
+      </div>
+      <div>Informatika<img src="/obrazky/mat.png" /></div>
+      <div>Elektrotechnika a hardware<img src="/obrazky/mat.png" /></div>
+      <div>História, filozofia, právne vedy<img src="/obrazky/mat.png" /></div>
+      <div>
+        Teória kultúry, umenie, umelecká, odevná tvorba<img
+          src="/obrazky/mat.png"
+        />
+      </div>
+      <div>Ekonomika a riadenie<img src="/obrazky/mat.png" /></div>
+      <div>
+        Pedagogika, psychológia, sociológia<img src="/obrazky/mat.png" />
+      </div>
+      <div>
+        Tvorba učebných pomôcok, didaktické technológie<img
+          src="/obrazky/mat.png"
+        />
+      </div>
+      <div>Problematika voľného času<img src="/obrazky/mat.png" /></div>
+      <div>Zdravotníctvo a farmakológia<img src="/obrazky/mat.png" /></div>
+      <div>
+        Pôdohospodárstvo (poľnohospodárstvo, lesné a vodné hospodárstvo)<img
+          src="/obrazky/mat.png"
+        />
+      </div>
+      <div>
+        Cestovný ruch, hotediverstvo, gastronómia<img src="/obrazky/mat.png" />
+      </div>
+      <div>Strojárstvo, hutníctvo, doprava<img src="/obrazky/mat.png" /></div>
+      <div>
+        Stavebníctvo, geodézia, kartografia<img src="/obrazky/mat.png" />
+      </div>
     </div>
 
     <!--Archiv prác-->
     <div id="archiv" class="archiv">
       <h2>Archív prác</h2>
+
+      <input type="text" id="archiv-search" placeholder="Vyhľadajte prácu..." />
+      <script>
+        document
+          .getElementById("archiv-search")
+          .addEventListener("input", function () {
+            const text = this.value.toLowerCase();
+            document.querySelectorAll(".skolsky-rok").forEach((rok) => {
+              const items = rok.querySelectorAll("ul li");
+              let hasVisible = false;
+              items.forEach((li) => {
+                const match = li.innerText.toLowerCase().includes(text);
+                li.style.display = match ? "" : "none";
+                if (match) hasVisible = true;
+              });
+              rok.style.display = hasVisible ? "" : "none";
+            });
+          });
+      </script>
 
       <div class="grid-rokov">
         <div class="skolsky-rok">

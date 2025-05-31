@@ -1,8 +1,11 @@
 header {
   background-color: #004080;
   padding: 20px 60px;
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 
   display: flex;
   justify-content: space-between;
